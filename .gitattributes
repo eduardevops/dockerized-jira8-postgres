@@ -1,0 +1,10 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+# Ignore documentation  and photos with “export-ignore”.
+*.gitattributes
+*.gitignore
+*README.md export-ignore
+*LICENSE export-ignore
+
+*.png binary
+*.jpg binary
