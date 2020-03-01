@@ -1,0 +1,44 @@
+version: '3'
+services:
+  jira-web:
+    restart: always
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: jira-web
+    ports:
+      - 8080:8080
+    env_file:
+      - .env.jira
+    volumes:
+      - web:/var/atlassian/jira
+    links:
+      - jira-db
+  jira-db:
+    image: postgres:9.6-alpine
+    networks:
+      - jiranet
+    volumes:
+      - db:/var/lib/postgresql/data
+    environment:
+      - 'POSTGRES_USER=jira-user'
+      # CHANGE THE PASSWORD!
+      - 'POSTGRES_PASSWORD=password'
+      - 'POSTGRES_DB=jira-db'
+      - 'POSTGRES_ENCODING=UNICODE'
+      - 'POSTGRES_COLLATE=C'
+      - 'POSTGRES_COLLATE_TYPE=C'
+    logging:
+      # limit logs retained on host to 25MB
+      driver: "json-file"
+      options:
+        max-size: "500k"
+max-file: "50"
+
+volumes:
+    web:
+    db:
+
+networks:
+  jiranet:
+driver: bridge
