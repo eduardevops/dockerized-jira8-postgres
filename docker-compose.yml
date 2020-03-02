@@ -1,6 +1,9 @@
 version: '3'
+
 services:
   jira-web:
+    depends_on:
+    - jira-db
     restart: always
     build:
       context: .
@@ -22,7 +25,6 @@ services:
       - db:/var/lib/postgresql/data
     environment:
       - 'POSTGRES_USER=jira-user'
-      # CHANGE THE PASSWORD!
       - 'POSTGRES_PASSWORD=password'
       - 'POSTGRES_DB=jira-db'
       - 'POSTGRES_ENCODING=UNICODE'
@@ -33,7 +35,7 @@ services:
       driver: "json-file"
       options:
         max-size: "500k"
-max-file: "50"
+        max-file: "50"
 
 volumes:
     web:
