@@ -2,8 +2,6 @@ version: '3'
 
 services:
   jira-web:
-    depends_on:
-    - jira-db
     restart: always
     build:
       context: .
@@ -11,26 +9,19 @@ services:
     container_name: jira-web
     ports:
       - 8080:8080
-    environment:
-      # - 'JIRA_DATABASE_URL=jira-db://jira-user@postgresql/jiradb'
-      - 'JIRA_DATABASE_URL=jdbc:postgresql://jira-db:5432/jira_db'
-      - 'JIRA_USER=jiea_user'
-      - 'JIRA_DB_PASSWORD=password'
-      - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
-      - 'SETENV_JVM_MAXIMUM_MEMORY=4096m'
-      - 'JIRA_PROXY_NAME='
-      - 'JIRA_PROXY_PORT='
-      - 'JIRA_PROXY_SCHEME='
-    # env_file:
-      # - .env.jira
+    env_file:
+      - .env.jira
     volumes:
       - web:/var/atlassian/jira
     links:
       - jira-db
   jira-db:
+    restart: always
     image: postgres:9.6-alpine
     volumes:
       - db:/var/lib/postgresql/data
+    env_file:
+      - .env.db
     environment:
       - 'POSTGRES_USER=jira_user'
       - 'POSTGRES_PASSWORD=password'

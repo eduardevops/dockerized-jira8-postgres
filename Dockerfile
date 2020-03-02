@@ -6,7 +6,6 @@ ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV JIRA_VERSION  8.7.1
 
 # Install Atlassian JIRA and helper tools and setup initial home
-# directory structure.
 RUN set -x \
     && apk add --no-cache curl xmlstarlet bash ttf-dejavu libc6-compat \
     && mkdir -p                "${JIRA_HOME}" \
@@ -31,16 +30,12 @@ RUN set -x \
     && touch -d "@0"           "${JIRA_INSTALL}/conf/server.xml"
 
 # Use the default unprivileged account. This could be considered bad practice
-# on systems where multiple processes end up being executed by 'daemon' but
-# here we only ever run one process anyway.
 USER daemon:daemon
 
 # Expose default HTTP connector port.
 EXPOSE 8080
 
-# Set volume mount points for installation and home directory. Changes to the
-# home directory needs to be persisted as well as parts of the installation
-# directory due to eg. logs.
+# Set volume mount points for installation and home directory.
 VOLUME ["/var/atlassian/jira", "/opt/atlassian/jira/logs"]
 
 # Set the default working directory as the installation directory.
