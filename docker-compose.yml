@@ -18,7 +18,7 @@ services:
   jira-db:
     restart: always
     image: postgres:9.6-alpine
-    container_name: jira-web
+    container_name: jira-db
     volumes:
       - db:/var/lib/postgresql/data
     # env_file:
