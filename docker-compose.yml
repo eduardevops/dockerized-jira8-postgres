@@ -11,25 +11,33 @@ services:
     container_name: jira-web
     ports:
       - 8080:8080
-    env_file:
-      - .env.jira
+    environment:
+      # - 'JIRA_DATABASE_URL=jira-db://jira-user@postgresql/jiradb'
+      - 'JIRA_DATABASE_URL=jdbc:postgresql://jira-db:5432/jira_db'
+      - 'JIRA_USER=jiea_user'
+      - 'JIRA_DB_PASSWORD=password'
+      - 'SETENV_JVM_MINIMUM_MEMORY=2048m'
+      - 'SETENV_JVM_MAXIMUM_MEMORY=4096m'
+      - 'JIRA_PROXY_NAME='
+      - 'JIRA_PROXY_PORT='
+      - 'JIRA_PROXY_SCHEME='
+    # env_file:
+      # - .env.jira
     volumes:
       - web:/var/atlassian/jira
     links:
       - jira-db
   jira-db:
     image: postgres:9.6-alpine
-    networks:
-      - jiranet
     volumes:
       - db:/var/lib/postgresql/data
     environment:
-      - 'POSTGRES_USER=jira-user'
+      - 'POSTGRES_USER=jira_user'
       - 'POSTGRES_PASSWORD=password'
-      - 'POSTGRES_DB=jira-db'
+      - 'POSTGRES_DB=jira_db'
       - 'POSTGRES_ENCODING=UNICODE'
-      - 'POSTGRES_COLLATE=C'
-      - 'POSTGRES_COLLATE_TYPE=C'
+      - 'POSTGRES_COLLATE=en_US.UTF-8'
+      - 'POSTGRES_COLLATE_TYPE=en_US.UTF-8'
     logging:
       # limit logs retained on host to 25MB
       driver: "json-file"
@@ -40,7 +48,3 @@ services:
 volumes:
     web:
     db:
-
-networks:
-  jiranet:
-driver: bridge
