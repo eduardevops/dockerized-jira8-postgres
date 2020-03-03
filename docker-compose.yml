@@ -22,15 +22,15 @@ services:
     container_name: jira-db
     volumes:
       - db:/var/lib/postgresql/data
-    # env_file:
-      # - .env.db
-    environment:
-      - 'POSTGRES_USER=jira_user'
-      - 'POSTGRES_PASSWORD=password'
-      - 'POSTGRES_DB=jira_db'
-      - 'POSTGRES_ENCODING=UNICODE'
-      - 'POSTGRES_COLLATE=en_US.UTF-8'
-      - 'POSTGRES_COLLATE_TYPE=en_US.UTF-8'
+    env_file:
+      - .env.db
+    # environment:
+      # - 'POSTGRES_USER=jira_user'
+      # - 'POSTGRES_PASSWORD=password'
+      # - 'POSTGRES_DB=jira_db'
+      # - 'POSTGRES_ENCODING=UNICODE'
+      # - 'POSTGRES_COLLATE=en_US.UTF-8'
+      # - 'POSTGRES_COLLATE_TYPE=en_US.UTF-8'
     logging:
       # limit logs retained on host to 25MB
       driver: "json-file"
