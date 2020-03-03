@@ -101,8 +101,13 @@ LABEL com.atlassian.application.jira.version=$JIRA_PRODUCT-$JIRA_VERSION \
       com.atlassian.application.jira.groupid=$CONTAINER_GID
 
 USER jira
+
 WORKDIR ${JIRA_HOME}
+
 VOLUME ["/var/atlassian/jira"]
+
 EXPOSE 8080
+
 ENTRYPOINT ["/usr/bin/tini","--","/usr/local/bin/docker-entrypoint.sh"]
+
 CMD ["jira"]

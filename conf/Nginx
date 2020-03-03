@@ -1,0 +1,52 @@
+server {
+    listen       80;
+    server_name  jira.eduardevops.io;
+
+    location / {
+
+        return 301 https://$host$request_uri;
+   }
+}
+
+
+server {
+    listen       443 ssl;
+    server_name  jira.eduardevops.io.com;
+    
+    ssl_session_cache shared:SSL:1m;
+
+    error_log /var/nginx/log/jira_error.log debug;
+    access_log /var/nginx/log/jira_access.log;
+
+    ssl_certificate /etc/letsencrypt/live/jira.eduardevops.io/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/jira.eduardevops.io/privkey.pem;
+
+    ssl_session_timeout  10m;
+    ssl_prefer_server_ciphers on;
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+    ssl_ciphers '!DHE-DSS-AES256-GCM-SHA384:!DHE-RSA-AES256-GCM-SHA384:!DHE-RSA-AES256-SHA256:!DHE-DSS-AES256-SHA256:!DHE-RSA-AES256-SHA:!DHE-DSS-AES256-SHA:!DHE-RSA-CAMELLIA256-SHA:!DHE-DSS-CAMELLIA256-SHA:!DHE:!MD5:!RC4:!EXPORT:!aNULL:!eNull:!DHE-RSA-AES128-GCM-SHA256:!DHE-RSA-AES128-CBC-SHA256:kEECDH+ECDSA+AES128:kEECDH+ECDSA+AES256:kEECDH+AES128:kEECDH+AES256:kEDH+AES128:kEDH+AES256:+SHA:!aNULL:!eNULL:!LOW:!kECDH:!DSS:!MD5:!EXP:!PSK:!SRP:!CAMELLIA:!SEED:!3DES';#
+
+    location /secure/ForgotLoginDetails.jspa {
+        return 301 https://jira.eduardevops.io;
+    }
+
+    location / {
+		proxy_connect_timeout       600;
+		proxy_send_timeout          600;
+		proxy_read_timeout          600;
+		send_timeout                600;
+		
+        client_max_body_size 100m;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Server $host;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_pass http://127.0.0.1:8080;
+
+    }
+}
+
+ #<Connector acceptCount="100" connectionTimeout="20000" disableUploadTimeout="true" enableLookups="false" maxHttpHeaderSize="8192" maxThreads="150" minSpareThreads="25" port="8080" protocol="HTTP/1.1" redirectPort="8443" # useBodyEncodingForURI="true" scheme="https" proxyName="jira.example.com" proxyPort="443"/>
+ 
+ 
+ 
