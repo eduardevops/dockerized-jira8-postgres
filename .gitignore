@@ -1,6 +1,12 @@
 # Log file
 *.log
 
+*.gitattributes
+*.gitignore
+
+*README.md
+*LICENSE
+
 # Pictures
 *.jpg
 *.png
