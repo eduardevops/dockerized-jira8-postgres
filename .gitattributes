@@ -6,5 +6,7 @@
 *README.md export-ignore
 *LICENSE export-ignore
 
+assets export-ignore
+
 *.png binary
 *.jpg binary
