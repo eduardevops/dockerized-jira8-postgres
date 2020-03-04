@@ -1,16 +1,11 @@
-# Log file
-*.log
-
+# Folders
 assets
 
-*.gitattributes
-*.gitignore
+# Hidden files
+.gitattributes
+.gitignore
 
-*README.md
-*LICENSE
-.DS_Store
-.DS_Store?
-
-# Pictures
-*.jpg
-*.png
+# Other files
+README.md
+LICENSE
+.DS_Store*
