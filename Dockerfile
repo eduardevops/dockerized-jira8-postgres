@@ -1,5 +1,5 @@
-# Defining base image
-eduardevops/openjdk11-alpine
+# Base image
+FROM eduardevops/openjdk11-alpine
 
 # Configuration variables.
 ENV JIRA_HOME     /var/atlassian/jira
