@@ -1,6 +1,6 @@
 # DO NOT USE
 
-### OpenJDK 11
+### Dockerized Jira with PostgreSQL
 
 ![Logo](./assets/logo.jpg)
 
