@@ -11,7 +11,7 @@
 * [Project Tree](#Project-Tree)
 * [Backup Folder](#Backup-Folder)
 * [Rename](#Rename)
-* [HowTo](#HowTo)
+* [Deployment](#Deployment)
 
 This is a fork of ![Martin Aksel Jensen's](https://github.com/cptactionhank) project ![docker-atlassian-jira](https://github.com/cptactionhank/docker-atlassian-jira)  <br>
 
@@ -48,12 +48,12 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 
 
 ### Backup Folder
-| File                        | Description                                                        |
-| :-------------------------- |:------------------------------------------------------------------ |
-| db_backup.sh   | Small script to backup dockerized database                                      |
-| db_restore.sh  | Small script to restore dockerized database                                     |
-| jira_backup.sh | Small script to copy Jira exported XML files and remove files older then 3 days |
-| .pgpass        | The file .pgpass in a user's home directory can contain passwords to be used if the connection requires a password |
+| File                        | Description                                                                           |
+| :-------------------------- |:------------------------------------------------------------------------------------- |
+| db_backup.sh   | Small script to backup dockerized database                                                         |
+| db_restore.sh  | Small script to restore dockerized database                                                        |
+| jira_backup.sh | Small script to copy Jira exported XML files and remove files older then 3 days                    |
+| .pgpass        | In a user's home directory can contain passwords to be used if the connection requires a password  |
 
 ### Rename
 All names can be, and should be changed.
