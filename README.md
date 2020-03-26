@@ -62,7 +62,7 @@ All names can be, and should be changed.
 
 ### Deployment
 Clone repo to your server (I would suggest use /opt directory)
-```less
+```java
 sudo git clone https://github.com/eduardevops/dockerized-jira8-postgresql.git
 ```
 
@@ -72,12 +72,13 @@ cd /path/to/dockerized-jira8-postgresql
 ```
 
 Make docker-entrypoint.sh file executable for ```other``` and run the composer
-```less
+
+```
 chmod o+x docker-entrypoint.sh
 docker-compose up -d
 ```
 
 Check logs in real-time
-```less
+```java
 docker-compose logs -f
 ```
