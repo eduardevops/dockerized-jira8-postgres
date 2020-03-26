@@ -9,7 +9,7 @@
 * [Versions](#Versions)
 * [Prerequisites](#Prerequisites)
 * [Project Tree](#Project-Tree)
-* [Config Folder](#Config-Folder)
+* [Backup Folder](#Backup-Folder)
 * [Rename](#Rename)
 * [HowTo](#HowTo)
 
@@ -34,6 +34,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 ├── .env.db
 ├── .env.jira
 ├── Dockerfile
+├── Dockerfile-OpenJDK8
 ├── assets
 │   └── logo.jpg
 ├── backup
@@ -41,22 +42,18 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 │   ├── db_backup.sh
 │   ├── db_restore.sh
 │   └── jira_backup.sh
-├── conf
-│   ├── apache-reverse-proxy.conf
-│   ├── httpd.conf
-│   └── nginx-reverse-proxy.conf
 ├── docker-compose.yml
 └── docker-entrypoint.sh
 ```
 
 
-### Config Folder
-| File                        | Description                                                                                   |
-| :-------------------------- |:--------------------------------------------------------------------------------------------- |
-| apache-reverse-proxy.conf   | Basic reverse proxy config file for apache (With Letsencrypt certificates)                    |
-| nginx-reverse-proxy.conf    | Basic reverse proxy config file for nginx  (With Letsencrypt certificates)                    |
-| httpd.conf                  | Apache conf with slight change, just to avoid "could not reliably determine the server's fully qualified domain name" message      |
-| .pgpass                     | The file .pgpass in a user's home directory can contain passwords to be used if the connection requires a password |
+### Backup Folder
+| File                        | Description                                                                                           |
+| :-------------------------- |:----------------------------------------------------------------------------------------------------- |
+| db_backup.sh   | Small script to backup dockerized database                                          |
+| db_restore.sh  | Small script to restore dockerized database                                         |
+| jira_backup.sh | Small script to copy Jira exported XML files and remove files older then 3 days      |
+| .pgpass        | The file .pgpass in a user's home directory can contain passwords to be used if the connection requires a password |
 
 ### Rename
 All names can be, and should be changed.
