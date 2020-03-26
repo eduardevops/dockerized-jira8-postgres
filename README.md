@@ -49,12 +49,15 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 └── docker-entrypoint.sh
 ```
 
+
+
+
 ### Config Folder
 | File                        | Description                                                                                   |
 | :-------------------------- |:--------------------------------------------------------------------------------------------- |
 | apache-reverse-proxy.conf   | Basic reverse proxy config file for apache (With Letsencrypt certificates)                    |
 | nginx-reverse-proxy.conf    | Basic reverse proxy config file for nginx  (With Letsencrypt certificates)                    |
-| httpd.conf                  | Apache conf with slight change, just to avoid "Could not reliably determine ..." message      |
+| httpd.conf                  | Apache conf with slight change, just to avoid "could not reliably determine the server's fully qualified domain name" message      |
 | .pgpass                     | The file .pgpass in a user's home directory can contain passwords to be used if the connection requires a password |
 
 ### Rename
@@ -62,7 +65,7 @@ All names can be, and, in most cases, should be changed.
 
 -----
 
-### HowTo
+### Deployment
 Clone repo to your server (I would suggest use /opt directory)
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-jira8-postgresql.git
