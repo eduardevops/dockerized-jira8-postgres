@@ -46,7 +46,6 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 └── docker-entrypoint.sh
 ```
 
-
 ### Backup Folder
 | File                        | Description                                                                           |
 | :-------------------------- |:------------------------------------------------------------------------------------- |
