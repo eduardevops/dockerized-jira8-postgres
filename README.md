@@ -30,7 +30,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 
 ### Project Tree
 
-```java
+```less
 ├── .env.db
 ├── .env.jira
 ├── Dockerfile
@@ -62,7 +62,7 @@ All names can be, and should be changed.
 
 ### Deployment
 Clone repo to your server (I would suggest use /opt directory)
-```java
+```less
 sudo git clone https://github.com/eduardevops/dockerized-jira8-postgresql.git
 ```
 
@@ -73,12 +73,12 @@ cd /path/to/dockerized-jira8-postgresql
 
 Make docker-entrypoint.sh file executable for ```other``` and run the composer
 
-```
+```less
 chmod o+x docker-entrypoint.sh
 docker-compose up -d
 ```
 
 Check logs in real-time
-```java
+```less
 docker-compose logs -f
 ```
