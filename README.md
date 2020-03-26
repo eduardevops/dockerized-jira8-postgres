@@ -21,7 +21,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 #### Versions
 *	Jira v8.8.0
 *	PostgreSQL v11.7
-* OpenJDK v11.0.6
+* OpenJDK v11.0.6/v8.0.212
 
 #### Build With
 *	[Docker](https://www.docker.com/)
