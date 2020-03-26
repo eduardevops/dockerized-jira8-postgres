@@ -6,7 +6,7 @@ ENV JIRA_HOME     /var/atlassian/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
 ENV JIRA_VERSION   8.8.0
 
-# Install Atlassian JIRA and helper tools and setup initial home
+# Install Atlassian Jira setup initial home
 RUN set -x \
     && apk add --no-cache curl xmlstarlet bash ttf-dejavu libc6-compat \
     && mkdir -p                "${JIRA_HOME}" \
