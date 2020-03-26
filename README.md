@@ -7,7 +7,7 @@
 
 ## Table of contents
 * [Versions](#Versions)
-* [Build With](#Build-With)
+* [Prerequisites](#Prerequisites)
 * [Project Tree](#Project-Tree)
 * [Config Folder](#Config-Folder)
 * [Rename](#Rename)
@@ -23,7 +23,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 *	PostgreSQL v11.7
 * OpenJDK v11.0.6/v8.0.212
 
-#### Build With
+#### Prerequisites
 *	[Docker](https://www.docker.com/)
 *	[Docker Compose](https://docs.docker.com/compose/install/)
 ------
