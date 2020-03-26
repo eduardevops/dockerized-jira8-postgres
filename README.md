@@ -1,11 +1,11 @@
-### Dockerized Jira with PostgreSQL
+## Dockerized Jira with PostgreSQL
 
 ![Logo](./assets/logo.jpg)
 
 ### Status
 <img alt="Image Size" src="https://img.shields.io/docker/image-size/eduardevops/jira8-postgresql" style="max-width:100%;"> <img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/eduardevops/jira8-postgresql" style="max-width:100%;"> <img alt="Build Status" src="https://img.shields.io/docker/cloud/build/eduardevops/jira8-postgresql" style="max-width:100%;"> <img alt="Licenses" src="https://img.shields.io/badge/License-GPLv3-blue.svg" style="max-width:100%;">
 
-## Table of contents
+### Table of contents
 * [Versions](#Versions)
 * [Prerequisites](#Prerequisites)
 * [Project Tree](#Project-Tree)
@@ -18,17 +18,17 @@ You may use his project if you prefer PostgreSQL.
 For Jira with MySQL use the following project ![Jira with MySQL](https://github.com/eduardevops/dockerized-jira8-mysql)
 For Jira with MariaDB use the following project ![Jira with MariaDB](https://github.com/eduardevops/dockerized-jira8-mariadb)
 
-#### Versions
+### Versions
 *	Jira v8.8.0
 *	PostgreSQL v11.7
 * OpenJDK v11.0.6/v8.0.212
 
-#### Prerequisites
+### Prerequisites
 *	[Docker](https://www.docker.com/)
 *	[Docker Compose](https://docs.docker.com/compose/install/)
 ------
 
-#### Project Tree
+### Project Tree
 
 ```less
 ├── .env.db
@@ -49,7 +49,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 └── docker-entrypoint.sh
 ```
 
-#### Config Folder
+### Config Folder
 | File                        | Description                                                                                   |
 | :-------------------------- |:--------------------------------------------------------------------------------------------- |
 | apache-reverse-proxy.conf   | Basic reverse proxy config file for apache (With Letsencrypt certificates)                    |
@@ -57,12 +57,12 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 | httpd.conf                  | Apache conf with slight change, just to avoid "Could not reliably determine ..." message      |
 | .pgpass                     | The file .pgpass in a user's home directory can contain passwords to be used if the connection requires a password |
 
-#### Rename
+### Rename
 All names can be, and, in most cases, should be changed.
 
 -----
 
-#### HowTo
+### HowTo
 Clone repo to your server (I would suggest use /opt directory)
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-jira8-postgresql.git
