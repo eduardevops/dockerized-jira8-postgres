@@ -14,7 +14,7 @@
 * [HowTo](#HowTo)
 
 This is a fork of ![Martin Aksel Jensen's](https://github.com/cptactionhank) project ![docker-atlassian-jira](https://github.com/cptactionhank/docker-atlassian-jira)  <br>
-You may use his project if you prefer PostgreSQL.
+
 For Jira with MySQL use the following project ![Jira with MySQL](https://github.com/eduardevops/dockerized-jira8-mysql) <br>
 For Jira with MariaDB use the following project ![Jira with MariaDB](https://github.com/eduardevops/dockerized-jira8-mariadb)
 
