@@ -49,6 +49,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 └── docker-entrypoint.sh
 ```
 
+
 ### Config Folder
 | File                        | Description                                                                                   |
 | :-------------------------- |:--------------------------------------------------------------------------------------------- |
@@ -58,7 +59,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 | .pgpass                     | The file .pgpass in a user's home directory can contain passwords to be used if the connection requires a password |
 
 ### Rename
-All names can be, and, in most cases, should be changed.
+All names can be, and should be changed.
 
 -----
 
