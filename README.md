@@ -30,7 +30,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 
 ### Project Tree
 
-```
+```java
 ├── .env.db
 ├── .env.jira
 ├── Dockerfile
