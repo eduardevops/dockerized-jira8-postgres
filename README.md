@@ -38,7 +38,6 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 ├── assets
 │   └── logo.jpg
 ├── backup
-│   ├── .pgpass
 │   ├── db_backup.sh
 │   ├── db_restore.sh
 │   └── jira_backup.sh
