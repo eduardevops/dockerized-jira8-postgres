@@ -58,7 +58,7 @@ All names can be, and should be changed.
 -----
 
 ### Deployment
-Clone repo to your server (I would suggest use /opt directory)
+Clone repo to your server (e.g ```/opt```)
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-jira8-postgresql.git
 ```
