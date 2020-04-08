@@ -17,7 +17,9 @@ RUN set -x \
 # Configuration variables.
 ENV JIRA_HOME     /var/atlassian/jira
 ENV JIRA_INSTALL  /opt/atlassian/jira
-ENV JIRA_VERSION   8.8.0
+# ENV JIRA_VERSION   8.8.0
+ARG VERSION=default
+ENV JIRA_VERSION ${VERSION}
 
 # Install Atlassian Jira setup initial home
 RUN set -x \
