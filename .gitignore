@@ -1,8 +1,0 @@
-# Hidden files
-.gitattributes
-.gitignore
-
-# Other files
-README.md
-LICENSE
-.DS_Store
