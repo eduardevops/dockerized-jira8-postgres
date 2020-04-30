@@ -1,4 +1,4 @@
-## Dockerized Jira with PostgreSQL
+### Dockerized Jira with PostgreSQL
 
 ![Logo](./assets/logo.jpg)
 
@@ -53,12 +53,12 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 | jira_backup.sh | Small script to copy Jira exported XML files and remove files older then 3 days                    |
 
 ### Rename
-All names can be, and should be changed.
+All names can be, moreover, in most cases, should be changed.
 
 -----
 
 ### Deployment
-Clone repo to your server (e.g ```/opt```)
+Clone repo to your server. I suggest using ```/opt``` directory
 ```less
 sudo git clone https://github.com/eduardevops/dockerized-jira8-postgresql.git
 ```
