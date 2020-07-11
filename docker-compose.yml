@@ -20,7 +20,7 @@ services:
     image: postgres:11-alpine
     container_name: jira-db
     volumes:
-      - jira-db:/var/lib/postgresql/jira-db
+      - jira-db:/var/lib/postgresql/data
     env_file:
       - .env.db
     logging:
