@@ -46,7 +46,7 @@ For Jira with MariaDB use the following project ![Jira with MariaDB](https://git
 | jira_backup.sh | Small script to copy Jira exported XML files and remove files older than 3 days                    |
 
 ### Rename
-It is highy advised to change all names.
+It is highly advised to change all names.
 
 -----
 
