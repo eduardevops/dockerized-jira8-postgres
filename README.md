@@ -12,10 +12,8 @@
 * [Rename](#Rename)
 * [Deployment](#Deployment)
 
-This is a fork of ![Martin Aksel Jensen's](https://github.com/cptactionhank) project ![docker-atlassian-jira](https://github.com/cptactionhank/docker-atlassian-jira)  <br>
-
-For Jira with MySQL use the following project ![Jira with MySQL](https://github.com/eduardsaryan/dockerized-jira8-mysql) <br>
-For Jira with MariaDB use the following project ![Jira with MariaDB](https://github.com/eduardsaryan/dockerized-jira8-mariadb)
+For Jira with MySQL use the following project [Jira with MySQL](https://github.com/eduardsaryan/dockerized-jira8-mysql) <br>
+For Jira with MariaDB use the following project [Jira with MariaDB](https://github.com/eduardsaryan/dockerized-jira8-mariadb)
 
 ### Prerequisites
 *	[Docker](https://www.docker.com/)
